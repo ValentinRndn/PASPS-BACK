@@ -1,0 +1,14 @@
+{
+  "name": "pasps-back",
+  "version": "1.0.0",
+  "description": "Partie back du site pour le PASPS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "valentin renaudin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
