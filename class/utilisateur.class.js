@@ -32,5 +32,15 @@ class Utilisateur {
         this._mdp = value;
     }
 
+    toMap() {
+        return {
+            id: this._id,
+            pseudonyme: this._pseudonyme,
+            mdp: this._mdp
+        };
+    }
     
+    static fromMap(map) {
+        return new Utilisateur(map.id, map.pseudonyme, map.mdp);
+    }
 }
