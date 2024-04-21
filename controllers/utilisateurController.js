@@ -37,8 +37,8 @@ exports.authentification = (req, res) => {
         if (err) {
             return res.status(500).json({ error: "Erreur lors de l'authentification" });
         } else if (result.length > 0) {
-            const token = jwt.sign({ id: result[0].id }, tokenKey, { expiresIn: "24h" }, { algorithm: 'RS256' });
-            return res.status(200).json({ message: "Authentification réussie", Token: token, Utilisateur: user.toMap() });
+            const token = jwt.sign({ id: result[0].id, pseudonyme: result[0].pseudonyme}, tokenKey, { expiresIn: "24h" }, { algorithm: 'RS256' });
+            return res.status(200).json({ message: "Authentification réussie", Token: token });
         } else {
             return res.status(401).json({ message: "Authentification échouée" });
         }

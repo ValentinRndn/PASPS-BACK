@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors = require('cors');
 const verifyToken = require('./middleware/verifyToken');
 const utilisateurRoute = require('./routes/utilisateurRoute');
 const blogRoute = require('./routes/blogRoute');
@@ -7,6 +7,7 @@ const structureRoute = require('./routes/structureRoute');
 
 const app = express();
 app.use(express.json());
+app?.use(cors());
 
 //Appel des routes
 app.use('/user', 
