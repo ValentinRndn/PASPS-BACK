@@ -4,9 +4,9 @@ class Database {
     constructor() {
         this.connection = mysql.createConnection({
             host: 'localhost',
-            user: 'admin',
-            password: '123',
-            database: 'pasps',
+            user: 'superadmin',
+            password: '1234',
+            database: 'papsp',
         });
         this.connect();
     }
@@ -27,6 +27,10 @@ class Database {
             this.instance = new Database();
         }
         return this.instance;
+    }
+
+    query(sql, values, callback) {
+        this.connection.query(sql, values, callback);
     }
 }
 

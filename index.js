@@ -9,12 +9,26 @@ const app = express();
 app.use(express.json());
 
 //Appel des routes
-app.use(verifyToken);
-app.use('/user', userRoute);
+app.use('/user', 
+(req, res, next) => {
+if (req.path === "/auth" ) {
+
+      next();
+
+    } else {
+
+      // Sinon, appliquez le middleware
+      verifyToken(req, res, next);
+
+    }
+},
+utilisateurRoute);
+
+// app.use(verifyToken);
 app.use('/blog', blogRoute);
 app.use('/structure', structureRoute);
 
 const port = 3000;
 app.listen(port, () => {
-    console.log('Serveur démarré sur le port ${port}');
+    console.log('Serveur démarré sur le port 3000');
 });

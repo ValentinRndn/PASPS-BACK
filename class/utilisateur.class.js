@@ -44,3 +44,5 @@ class Utilisateur {
         return new Utilisateur(map.id, map.pseudonyme, map.mdp);
     }
 }
+
+module.exports = Utilisateur;
