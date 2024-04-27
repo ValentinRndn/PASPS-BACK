@@ -1,10 +1,9 @@
 class Member {
-    constructor(id, nom, prenom, role, description) {
+    constructor(id, nom, prenom, role) {
         this._id = id;
         this._nom = nom;
         this._prenom = prenom;
         this._role = role;
-        this._description = description;
     }
 
     get id() {
@@ -40,26 +39,17 @@ class Member {
     }
 
 
-    get description() {
-        return this._description;
-    }
-
-    set description(value) {
-        this._description = value;
-    }
-
     toMap() {
         return {
             id: this._id,
             nom: this._nom,
             prenom: this._prenom,
             role: this._role,
-            description: this._description
         };
     }
     
     static fromMap(map) {
-        return new Member(map.id, map.nom, map.prenom, map.role, map.description);
+        return new Member(map.id, map.nom, map.prenom, map.role);
     }
 }
 
