@@ -4,6 +4,7 @@ const verifyToken = require('./middleware/verifyToken');
 const utilisateurRoute = require('./routes/utilisateurRoute');
 const blogRoute = require('./routes/blogRoute');
 const structureRoute = require('./routes/structureRoute');
+const memberRoute = require('./routes/memberRoute');
 
 const app = express();
 app.use(express.json());
@@ -28,6 +29,7 @@ utilisateurRoute);
 // app.use(verifyToken);
 app.use('/blog', blogRoute);
 app.use('/structure', structureRoute);
+app.use('/member', memberRoute);
 
 const port = 3000;
 app.listen(port, () => {
