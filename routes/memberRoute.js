@@ -5,7 +5,7 @@ const membresController = require('../controllers/memberController');
 
 // router.get('/getBlogById/:id', blogController.getBlogById);
 router.get('/getAllMembers', membresController.getAllMembers);
-// router.post('/createBlog', blogController.createBlog);
+router.post('/createMember', membresController.createMember);
 // router.put('/updateBlog/:id', blogController.updateBlog);
 // router.delete('/deleteBlog/:id', blogController.deleteBlog);
 
