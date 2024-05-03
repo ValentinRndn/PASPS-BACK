@@ -38,7 +38,7 @@ class Statistique {
     }
 
     static fromMap(map) {
-        return new Statistiques(map.personnes, map.maraudes, map.preservatifs);
+        return new Statistique(map.personnes, map.maraudes, map.preservatifs);
     }
 }
 
