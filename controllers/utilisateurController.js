@@ -9,8 +9,8 @@ const tokenKey = process.env.TOKEN_KEY;
 
 // Controller createUser
 exports.createUser = (req, res) => {
-    let user = User.fromMap(req.body);
-    const sql = 'INSERT INTO utilisateur (pseudonyme, mdp) VALUES (?, ?)';
+        let user = User.fromMap(req.body);
+        const sql = 'INSERT INTO utilisateur (pseudonyme, mdp) VALUES (?, ?)';
     const values = [user.nom, user.mdp];
 
     const dbInstance = db.getInstance(); // Obtenir une instance de la classe Database
