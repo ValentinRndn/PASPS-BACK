@@ -5,6 +5,7 @@ const utilisateurRoute = require('./routes/utilisateurRoute');
 const blogRoute = require('./routes/blogRoute');
 const structureRoute = require('./routes/structureRoute');
 const memberRoute = require('./routes/memberRoute');
+const statistiqueRoute = require('./routes/statistiqueRoute');
 
 const app = express();
 app.use(express.json());
@@ -30,6 +31,7 @@ utilisateurRoute);
 app.use('/blog', blogRoute);
 app.use('/structure', structureRoute);
 app.use('/member', memberRoute);
+app.use('/statistique', statistiqueRoute);
 
 const port = 3000;
 app.listen(port, () => {
