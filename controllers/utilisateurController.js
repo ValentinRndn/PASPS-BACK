@@ -44,3 +44,18 @@ exports.authentification = (req, res) => {
         }
     });
 };
+
+//Controller getAllUsers
+exports.getAllUsers = (req, res) => {
+    const sql = 'SELECT * FROM utilisateurs';
+    const dbInstance = db.getInstance(); // Obtenir une instance de la classe Database
+
+    dbInstance.query(sql, (err, result) => {
+        if (err) {
+            console.error("Erreur lors de la récupération des utilisateurs", err);
+            return res.status(500).json({ message: "Erreur lors de la récupération des utilisateurs" });
+        } else {
+            return res.status(200).json(result);
+        }
+    });
+};

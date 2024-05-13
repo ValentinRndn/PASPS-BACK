@@ -1,8 +1,8 @@
 class Structure {
-    constructor(id, nom, adresse, coos_gps, departement, telephone, mail, horaires_lundi, horaires_mardi, horaires_mercredi, horaires_jeudi, horaires_vendredi, horaires_samedi, horaires_dimanche, besoin) {
+    constructor(id, antenne, adresse, coos_gps, departement, telephone, mail, horaires_lundi, horaires_mardi, horaires_mercredi, horaires_jeudi, horaires_vendredi, horaires_samedi, horaires_dimanche, besoin) {
 
         this._id = id;
-        this._nom = nom;
+        this._antenne = antenne;
         this._adresse = adresse;
         this._coos_gps = coos_gps;
         this._departement = departement;
@@ -26,12 +26,12 @@ class Structure {
         this._id = value;
     }
 
-    get nom() {
-        return this._nom;
+    get antenne() {
+        return this._antenne;
     }
 
-    set nom(value) {
-        this._nom = value;
+    set antenne(value) {
+        this._antenne = value;
     }
 
     get adresse() {
@@ -138,4 +138,32 @@ class Structure {
         this._besoin = value;
     }
 
+    //FromMap
+    static fromMap(map) {
+        return new Structure(map.id, map.antenne, map.adresse, map.coos_gps, map.departement, map.telephone, map.mail, map.horaires_lundi, map.horaires_mardi, map.horaires_mercredi, map.horaires_jeudi, map.horaires_vendredi, map.horaires_samedi, map.horaires_dimanche, map.besoin);
+    }
+
+    //ToMap
+    toMap() {
+        return {
+            id: this._id,
+            antenne: this._antenne,
+            adresse: this._adresse,
+            coos_gps: this._coos_gps,
+            departement: this._departement,
+            telephone: this._telephone,
+            mail: this._mail,
+            horaires_lundi: this._horaires_lundi,
+            horaires_mardi: this._horaires_mardi,
+            horaires_mercredi: this._horaires_mercredi,
+            horaires_jeudi: this._horaires_jeudi,
+            horaires_vendredi: this._horaires_vendredi,
+            horaires_samedi: this._horaires_samedi,
+            horaires_dimanche: this._horaires_dimanche,
+            besoin: this._besoin
+        };
+    }
+
 }
+
+module.exports = Structure;
