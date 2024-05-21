@@ -12,7 +12,7 @@ exports.getAllBlogs = (req, res) => {
             console.error("Erreur lors de la récupération des blogs", err);
             return res.status(500).json({ message: "Erreur lors de la récupération des blogs" });
         } else {
-            const blogs = result.map(blog => new Blog(blog.id, blog.titre, blog.date, blog.photo, blog.description));
+            const blogs = result.map(blog => new Blog(blog.id, blog.titre, blog.date, blog.photo, blog.description, blog.epingle));
             return res.status(200).json(blogs);
         }
     });
