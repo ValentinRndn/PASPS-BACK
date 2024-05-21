@@ -47,5 +47,23 @@ class Blog {
         this._description = value;
     }
 
+    //FromMap
+    static fromMap(map) {
+        return new Blog(map.id, map.titre, map.date, map.photo, map.description);
+    }
+
+    //ToMap
+    toMap() {
+        return {
+            id: this._id,
+            titre: this._titre,
+            date: this._date,
+            photo: this._photo,
+            description: this._description
+        };
+    }
+
 
 }
+
+module.exports = Blog;    
