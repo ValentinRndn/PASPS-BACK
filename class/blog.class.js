@@ -1,11 +1,12 @@
 class Blog {
-    constructor(id, titre, date, image, description, epingle) {
+    constructor(id, titre, date, image, description, epingle, auteur) {
         this._id = id;
         this._titre = titre;
         this._date = date;
         this._image = image;
         this._description = description;
         this._epingle = epingle;
+        this._auteur = auteur;
     }
 
     get id() {
@@ -56,9 +57,17 @@ class Blog {
         this._epingle = value;
     }
 
+    get auteur() {
+        return this._auteur;
+    }
+
+    set auteur(value) {
+        this._auteur = value;
+    }
+
     //FromMap
     static fromMap(map) {
-        return new Blog(map.id, map.titre, map.date, map.image, map.description, map.epingle);
+        return new Blog(map.id, map.titre, map.date, map.image, map.description, map.epingle, map.auteur);
     }
 
     //ToMap
@@ -69,7 +78,8 @@ class Blog {
             date: this._date,
             image: this._image,
             description: this._description,
-            epingle: this._epingle
+            epingle: this._epingle,
+            auteur: this._auteur
         };
     }
 
